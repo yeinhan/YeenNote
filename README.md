@@ -7,7 +7,7 @@
 ## 2020-09-17
 webRTC: web Real Time Communication 을 공부하기 시작했다.   
 
-**배울것**
+> 배울것
 1. 웹캠에서 비디오 가져 오기
 2. RTCPeerConnection으로 비디오 스트리밍
 3. RTCDataChannel을 사용하여 데이터 스트리밍
