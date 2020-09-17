@@ -5,7 +5,7 @@
 
 ************
 ## 2020-09-17
-webRTC: web Real Time Communication 을 공부하기 시작했다.
+webRTC: web Real Time Communication 을 공부하기 시작했다.   
 
 **배울것**
 1. 웹캠에서 비디오 가져 오기
@@ -13,10 +13,7 @@ webRTC: web Real Time Communication 을 공부하기 시작했다.
 3. RTCDataChannel을 사용하여 데이터 스트리밍
 4. 메시지 교환을위한 신호 서비스 설정
 5. 피어 연결 및 신호 결합
-6. 사진을 찍고 데이터 채널을 통해 공유
-
-
-
+6. 사진을 찍고 데이터 채널을 통해 공유    
 
 
 구글 앱에서 Web Server For Chorm을 설치하면 크롬으로 로컬 서버를 만들 수 있다
