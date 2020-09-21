@@ -77,7 +77,7 @@ Link: [참조사이트][webRTClink]
 **Spring Framework**
 
 동작 방식
-![Spring](C:\YeenNote\Spring.jsp)
+![Spring](\Spring.jsp)
 
 
 
