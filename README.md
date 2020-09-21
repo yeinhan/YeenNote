@@ -71,7 +71,13 @@ WebRTC 피어는 또한 해상도 및 코덱 기능과 같은 로컬 및 원격 
 
 Link: [참조사이트][webRTClink]
 
-[webRTClink]: https://codelabs.developers.google.com/codelabs/webrtc-web/#4 "Go google"   
+[webRTClink]: https://codelabs.developers.google.com/codelabs/webrtc-web/#4 "Go google"      
+
+## 2020-09-21
+**Spring Framework**
+
+동작 방식
+<img src="C:\Users\goreg\Pictures\Spring.JPG" width="450px" height="300px" title="Spring 동작 방식"></img><br/>
 
 
 
