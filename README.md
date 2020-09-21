@@ -76,9 +76,27 @@ Link: [참조사이트][webRTClink]
 ## 2020-09-21
 **Spring Framework**
 
-동작 방식
+#### 동작 방식
 ![Spring](https://user-images.githubusercontent.com/57241500/93783140-5750d380-fc66-11ea-91dc-4944c0b75db8.JPG)
 
+###### web.xml 설정파일   
+ WAS가 최초 구동될 때 WEB-INF 디렉토리에 존재하는 web.xml을 읽고, 그에 해당하는 웹 애플리케이션 설정을 구한다. 각종 설정을 위한 파일이다. (mybatis, servlet, ...)
+###### servlet-context.xml
+서블릿 관련 설정이다. 
+
+             <!-- Resolves views selected for rendering by @Controllers to .jsp resources in the/WEB-INF/views directory -->
+       <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+       <beans:property name="prefix" value="/WEB-INF/views/" />
+       <beans:property name="suffix" value=".jsp" />
+       </beans:bean>
+
+       <context:component-scan base-package="com.company.devpad" />
+ <beans:bean class> : Controller가 Model를 리턴하고 DispatcherServlet이 jsp 파일을 찾을 때 쓰이는 정보를 기술하는 태그. "home"이라는 문자열을 반환하면 /WEB-INF/views/ 경로에서 접미사가 .jsp인 해당 파일을 찾는다. /WEB-INF/views/home.jsp    
+ <context:component-scan> : Java 파일의 @Controller로 등록된 bean 객체를 찾도록 해주는 태그
+ 
+ ###### Mybatis
+ 기존에 JDBC를 이용하여 프로그래밍을 하는 방식에 비해서 MyBatis는 개발자의 부담을 굉장히 많이 덜어주고, 생산성 향상에도 도움이 된다.
+ 
 
 
 
