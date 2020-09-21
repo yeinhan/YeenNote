@@ -77,7 +77,7 @@ Link: [참조사이트][webRTClink]
 **Spring Framework**
 
 동작 방식
-![Spring](\Spring.jsp)
+![Spring](https://user-images.githubusercontent.com/57241500/93783140-5750d380-fc66-11ea-91dc-4944c0b75db8.JPG)
 
 
 
