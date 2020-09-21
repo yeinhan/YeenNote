@@ -77,7 +77,7 @@ Link: [참조사이트][webRTClink]
 **Spring Framework**
 
 동작 방식
-<img src="C:\Users\goreg\Pictures\Spring.JPG width="450px" height="300px" title="Spring 동작 방식"></img><br/>
+![Spring](C:\YeenNote\Spring.jsp)
 
 
 
