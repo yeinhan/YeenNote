@@ -97,6 +97,20 @@ Link: [참조사이트][webRTClink]
  #### Mybatis
  기존에 JDBC를 이용하여 프로그래밍을 하는 방식에 비해서 MyBatis는 개발자의 부담을 굉장히 많이 덜어주고, 생산성 향상에도 도움이 된다.
  
+ 
+ ## 2020-09-23
+ mybatis에서 #{} 와 ${}의 차이
+ #: PreparedStatemnet
+ex)SELECT ID FROM TEST WHERE ID=#{id}
+   SELECT ID FROM TEST WHERE ID=?   (오라클로 넘어온 쿼리)
+   SELECT ID FROM TEST WHERE ID='amdin'   (실제수행)
+   ?에 파라미터가 바인딩되어 수행된다. 파싱된 쿼리문은 재활용(캐싱)이 되기 떄문에 효율적
+$: Statement
+ex)SELECT ID FROM TEST WHERE NUM = ${num}
+   SELECT ID FROM TEST WHERE NUM = 77
+   작은따옴표가 붙지 않기때문에 테이블이름이나 컬럼 이름을 동적으로 결정할 때 사용할 수 있다.
+   단, 파라미터 값이 바뀔 때마다 항상 쿼리문 파싱을 진행해야해서 성능상 단점이 존재
+      
 
 
 
