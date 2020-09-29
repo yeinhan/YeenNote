@@ -117,3 +117,21 @@ ERR_SSL_VERSION_OR_CIPHER_MISMATCH오류는 인증서 버전에 대문 문제 �
 
 ## 2020-09-29
  파이널 프로젝트 로그인 구현
+ #### @RequestBody와 @ModelAttribute
+ GET방식은 URL에 데이터를 담아 전송하며 1차원 데이터 밖에 담지 못한다. 따라서 검색조건 수준의 데이터를 담는게 옳바르다. GET방식 프로토콜은 Request 패킷에 Body가 존재하지 않는다. 그리고 POST방식은 Request의 Body에 데이터를 담는데 이 경우, JSON, 다차원 데이터를 담을 수 있다. 
+ 결론은 GET방식일 떄는 @RequestBody를 명시하지 않아야하고, POST방식일 때는 반드시 명시해야한다.     
+ 
+ @ModelAttribute는 Parameter에 쓸 경우 방아오자 하는 데이터의 이름을 지정하여 해당 데이터만 가져온다. 받아오는 데이터를 '지정한다'   
+ #### ModelAndView 객체
+      
+      @RequeestMapping("/border")
+      public ModelAndView board(){
+            ModelAndView mv = new ModelAndView();
+            mv.setViewName("board");      //뷰 이름
+            mv.addObject("data", "11234");      //뷰로 보낼 데이터 값
+            
+            return mv;
+        }
+ 
+ 그러면 jsp에서는 ${data}로 받아주면 된다.
+      
