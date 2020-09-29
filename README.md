@@ -113,5 +113,7 @@ ex)SELECT ID FROM TEST WHERE NUM = ${num}
       
 ## 2020-09-25
 webrtc API해보는데 어렵다..서버는 넘 어렵다... 접속도 어렵다..
-ERR_SSL_VERSION_OR_CIPHER_MISMATCH오류는 인증서 버전에 대문 문제 또는 SSL통신 시 사용하는 암호화 방식이 맞지 않거나 둘 중 하나이다.
+ERR_SSL_VERSION_OR_CIPHER_MISMATCH오류는 인증서 버전에 대문 문제 또는 SSL통신 시 사용하는 암호화 방식이 맞지 않거나 둘 중 하나이다.    
 
+## 2020-09-29
+ 파이널 프로젝트 로그인 구현
