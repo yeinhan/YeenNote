@@ -132,7 +132,8 @@ ERR_SSL_VERSION_OR_CIPHER_MISMATCH오류는 인증서 버전에 대문 문제 �
             
             return mv;
         }
- 
+      
+ addObject는 key와 value를 동시에 전송한다.
  그러면 jsp에서는 ${data}로 받아주면 된다.   
  
  ## 2020-09-30   
@@ -145,13 +146,3 @@ ERR_SSL_VERSION_OR_CIPHER_MISMATCH오류는 인증서 버전에 대문 문제 �
       
 이렇게 값을 가져오면 된다... 이렇게 간단한 것일 줄이야...
               
-
-그리고 ModelAndView 메소드 중에서 addObject()는 key와 value를 동시에 전송할 수 있다.
-
-      mav.addObject("title", "제목");
-
-이렇게 보내면 
-
-      <h2>${title}</h2>
-      
-로 받는다.
