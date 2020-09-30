@@ -133,5 +133,14 @@ ERR_SSL_VERSION_OR_CIPHER_MISMATCH오류는 인증서 버전에 대문 문제 �
             return mv;
         }
  
- 그러면 jsp에서는 ${data}로 받아주면 된다.
+ 그러면 jsp에서는 ${data}로 받아주면 된다.   
+ 
+ ## 2020-09-30   
+ 
+      session.setAttribute("login", res); 
       
+이렇게 저장한 세션 값은 .jsp에서 
+
+      <h2>${sessionScope.login.u_id }님 환영합니다.</h2>
+      
+이렇게 값을 가져오면 된다... 이렇게 간단한 것일 줄이야...
