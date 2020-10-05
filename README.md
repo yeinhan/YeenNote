@@ -146,3 +146,24 @@ ERR_SSL_VERSION_OR_CIPHER_MISMATCH오류는 인증서 버전에 대문 문제 �
       
 이렇게 값을 가져오면 된다... 이렇게 간단한 것일 줄이야...
               
+## 2020-10-05
+파이널 프로젝트 회원가입 구현 중
+#### @RequestParam   
+단일 HTTP요청 파라미터를 메소드 파라미터에 넣어주는 애노테이션    
+    
+    
+가져올 요청 파라미터의 이름을 @RequestParam 애노테이션의 기본값으로 지정해 주면 된다.   
+요청 파라미터의 값은 메소드 파라미터의 타입에 따라 적절하게 변환된다.
+
+      @RequestMapping(value="/check_id.do", method = RequestMethod.POST)
+            public void check_id(@RequestParam("u_id")String u_id, HttpServletResponse response) throws Exception {
+            
+파라미터 값이 꼭 존재해야하 한다.
+      
+      $.ajax({
+			url : "check_id.do",
+			type : "post",
+			data : {
+				u_id : $("#id").val()
+			},
+파라미터가 존재하지 않으면 400에러 발생
