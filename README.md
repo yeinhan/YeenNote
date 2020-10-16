@@ -71,8 +71,99 @@ WebRTC 피어는 또한 해상도 및 코덱 기능과 같은 로컬 및 원격 
 
 Link: [참조사이트][webRTClink]
 
-[webRTClink]: https://codelabs.developers.google.com/codelabs/webrtc-web/#4 "Go google"   
+[webRTClink]: https://codelabs.developers.google.com/codelabs/webrtc-web/#4 "Go google"      
 
+## 2020-09-21
+**Spring Framework**
 
+#### 동작 방식
+![Spring](https://user-images.githubusercontent.com/57241500/93783140-5750d380-fc66-11ea-91dc-4944c0b75db8.JPG)
 
+#### web.xml 설정파일   
+ WAS가 최초 구동될 때 WEB-INF 디렉토리에 존재하는 web.xml을 읽고, 그에 해당하는 웹 애플리케이션 설정을 구한다. 각종 설정을 위한 파일이다. (mybatis, servlet, ...)
+#### servlet-context.xml
+서블릿 관련 설정이다. 
 
+             <!-- Resolves views selected for rendering by @Controllers to .jsp resources in the/WEB-INF/views directory -->
+       <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+       <beans:property name="prefix" value="/WEB-INF/views/" />
+       <beans:property name="suffix" value=".jsp" />
+       </beans:bean>
+
+       <context:component-scan base-package="com.company.devpad" />
+ <beans:bean class> : Controller가 Model를 리턴하고 DispatcherServlet이 jsp 파일을 찾을 때 쓰이는 정보를 기술하는 태그. "home"이라는 문자열을 반환하면 /WEB-INF/views/ 경로에서 접미사가 .jsp인 해당 파일을 찾는다. /WEB-INF/views/home.jsp    
+ <context:component-scan> : Java 파일의 @Controller로 등록된 bean 객체를 찾도록 해주는 태그
+ 
+ #### Mybatis
+ 기존에 JDBC를 이용하여 프로그래밍을 하는 방식에 비해서 MyBatis는 개발자의 부담을 굉장히 많이 덜어주고, 생산성 향상에도 도움이 된다.
+ 
+ 
+ ## 2020-09-23
+ mybatis에서 #{} 와 ${}의 차이   
+ #: PreparedStatemnet      
+ex)SELECT ID FROM TEST WHERE ID=#{id}      
+   SELECT ID FROM TEST WHERE ID=?   (오라클로 넘어온 쿼리)      
+   SELECT ID FROM TEST WHERE ID='amdin'   (실제수행)     
+   ?에 파라미터가 바인딩되어 수행된다. 파싱된 쿼리문은 재활용(캐싱)이 되기 떄문에 효율적    
+$: Statement       
+ex)SELECT ID FROM TEST WHERE NUM = ${num}      
+   SELECT ID FROM TEST WHERE NUM = 77    
+   작은따옴표가 붙지 않기때문에 테이블이름이나 컬럼 이름을 동적으로 결정할 때 사용할 수 있다.    
+   단, 파라미터 값이 바뀔 때마다 항상 쿼리문 파싱을 진행해야해서 성능상 단점이 존재     
+      
+## 2020-09-25
+webrtc API해보는데 어렵다..서버는 넘 어렵다... 접속도 어렵다..
+ERR_SSL_VERSION_OR_CIPHER_MISMATCH오류는 인증서 버전에 대문 문제 또는 SSL통신 시 사용하는 암호화 방식이 맞지 않거나 둘 중 하나이다.    
+
+## 2020-09-29
+ 파이널 프로젝트 로그인 구현
+ #### @RequestBody와 @ModelAttribute
+ GET방식은 URL에 데이터를 담아 전송하며 1차원 데이터 밖에 담지 못한다. 따라서 검색조건 수준의 데이터를 담는게 옳바르다. GET방식 프로토콜은 Request 패킷에 Body가 존재하지 않는다. 그리고 POST방식은 Request의 Body에 데이터를 담는데 이 경우, JSON, 다차원 데이터를 담을 수 있다. 
+ 결론은 GET방식일 떄는 @RequestBody를 명시하지 않아야하고, POST방식일 때는 반드시 명시해야한다.     
+ 
+ @ModelAttribute는 Parameter에 쓸 경우 방아오자 하는 데이터의 이름을 지정하여 해당 데이터만 가져온다. 받아오는 데이터를 '지정한다'   
+ #### ModelAndView 객체
+      
+      @RequeestMapping("/border")
+      public ModelAndView board(){
+            ModelAndView mv = new ModelAndView();
+            mv.setViewName("board");      //뷰 이름
+            mv.addObject("data", "11234");      //뷰로 보낼 데이터 값
+            
+            return mv;
+        }
+      
+ addObject는 key와 value를 동시에 전송한다.
+ 그러면 jsp에서는 ${data}로 받아주면 된다.   
+ 
+ ## 2020-09-30   
+ 
+      session.setAttribute("login", res); 
+      
+이렇게 저장한 세션 값은 .jsp에서 
+
+      <h2>${sessionScope.login.u_id }님 환영합니다.</h2>
+      
+이렇게 값을 가져오면 된다... 이렇게 간단한 것일 줄이야...
+              
+## 2020-10-05
+파이널 프로젝트 회원가입 구현 중
+#### @RequestParam   
+단일 HTTP요청 파라미터를 메소드 파라미터에 넣어주는 애노테이션    
+    
+    
+가져올 요청 파라미터의 이름을 @RequestParam 애노테이션의 기본값으로 지정해 주면 된다.   
+요청 파라미터의 값은 메소드 파라미터의 타입에 따라 적절하게 변환된다.
+
+      @RequestMapping(value="/check_id.do", method = RequestMethod.POST)
+            public void check_id(@RequestParam("u_id")String u_id, HttpServletResponse response) throws Exception {
+            
+파라미터 값이 꼭 존재해야하 한다.
+      
+      $.ajax({
+			url : "check_id.do",
+			type : "post",
+			data : {
+				u_id : $("#id").val()
+			},
+파라미터가 존재하지 않으면 400에러 발생
