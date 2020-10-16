@@ -8,7 +8,7 @@ var socketIO = require('socket.io');
 var fileServer = new(nodeStatic.Server)();
 var app = http.createServer(function(req, res) {
   fileServer.serve(req, res);
-}).listen(8081);
+}).listen(8082);
 
 var io = socketIO.listen(app);
 io.sockets.on('connection', function(socket) {
@@ -48,7 +48,6 @@ io.sockets.on('connection', function(socket) {
       socket.emit('full', room);
     }
   });
-
 
   socket.on('ipaddr', function() {
     var ifaces = os.networkInterfaces();
