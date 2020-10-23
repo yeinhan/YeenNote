@@ -170,3 +170,7 @@ ERR_SSL_VERSION_OR_CIPHER_MISMATCH오류는 인증서 버전에 대문 문제 �
 
 ## 2020-10-22
 .getMapper...
+
+## 2020-10-23
+PrintWriter out = resoponse.getWriter(); 형식으로 응답으로 내보낼 출력 스트림을 얻어낸 후, 
+out.println("<script>");이런 식으로 스트림에 텍스트를 기록하게 된다.
