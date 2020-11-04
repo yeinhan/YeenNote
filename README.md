@@ -174,3 +174,17 @@ ERR_SSL_VERSION_OR_CIPHER_MISMATCH오류는 인증서 버전에 대문 문제 �
 ## 2020-10-23
 PrintWriter out = resoponse.getWriter(); 형식으로 응답으로 내보낼 출력 스트림을 얻어낸 후, 
 out.println("<script>");이런 식으로 스트림에 텍스트를 기록하게 된다.
+
+
+## 2020-11-0
+Ajax를 사용하는데 결과값이 controller에서 넘어오지 않았다.
+원인은 값은 안넘겨주니 넘어갈리가...
+
+
+	PrintWriter out = response.getWriter();
+		out.println(dao.check_id(u_id));
+		
+요래하니 넘어간다.
+
+-@ResponsBody
+뷰 페이지를 응답하지 않고 return 값을 그대로 반환한다는 것이다.
