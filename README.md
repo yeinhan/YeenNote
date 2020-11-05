@@ -176,7 +176,7 @@ PrintWriter out = resoponse.getWriter(); 형식으로 응답으로 내보낼 출
 out.println("<script>");이런 식으로 스트림에 텍스트를 기록하게 된다.
 
 
-## 2020-11-0
+## 2020-11-04
 Ajax를 사용하는데 결과값이 controller에서 넘어오지 않았다.
 원인은 값은 안넘겨주니 넘어갈리가...
 
@@ -188,3 +188,9 @@ Ajax를 사용하는데 결과값이 controller에서 넘어오지 않았다.
 
 -@ResponsBody
 뷰 페이지를 응답하지 않고 return 값을 그대로 반환한다는 것이다.
+
+## 2020-11-06
+String은 새로운 값을 할당 할 때마다 새로생성.
+StringBuffer는 메모리에 append해주는 방식이다.thread-safe라는 말에서처럼 변경가능하지만 multiple thread환경에서 안전한 클래스라고 한다.
+ StringBuilder는 변경가능한 문자열이지만 synchronization이 적용되지 않았다. 
+ 
