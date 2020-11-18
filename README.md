@@ -194,3 +194,9 @@ String은 새로운 값을 할당 할 때마다 새로생성.
 StringBuffer는 메모리에 append해주는 방식이다.thread-safe라는 말에서처럼 변경가능하지만 multiple thread환경에서 안전한 클래스라고 한다.
  StringBuilder는 변경가능한 문자열이지만 synchronization이 적용되지 않았다. 
  
+ 
+## 2020-11-19
+### Priority Queue
+큐는 FIFO이다 우선순위큐는 인터페이스 구현체 중 하나로, 저장한 순서에 구애받지 않고 우선순위에따라 정렬되며 가장 높은 우선순위부터 꺼낼 수 있다.
+저장공간을 배열을 사용하며 각 요소를 '힙'이라는 자료구조 형태로 저장한다. 그래서 시간 복잡도는 O(NLogN)이다.
+ 
