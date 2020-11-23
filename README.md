@@ -204,4 +204,8 @@ StringBuffer는 메모리에 append해주는 방식이다.thread-safe라는 말�
 ## 2020-11-21
 Math.max 함수는 숫자 집합중에 가장 큰 수를 리턴하는 함수이며,
 Math.min 함수는 숫자 집합중에서 가장 작은 수를 리턴하는 함수입니다.
+
+
+## 2020-11-23
+Arrays.toString();
  
